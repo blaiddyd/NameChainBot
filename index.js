@@ -8,14 +8,14 @@ const app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
+// Allows us to process the data
 app.use(bodyParser.urlencoded({extended: false}))
-
 app.use(bodyParser.json())
 
-// Routes
+// ROUTES
 
 app.get('/', function(req, res) {
-    res.send("Hello, i am beep boop")
+	res.send("Hi I am a chatbot")
 })
 
 // Facebook
@@ -28,5 +28,5 @@ app.get('/webhook/', function(req, res) {
 })
 
 app.listen(app.get('port'), function() {
-    console.log("running port")
+    console.log("running: port")
 })
